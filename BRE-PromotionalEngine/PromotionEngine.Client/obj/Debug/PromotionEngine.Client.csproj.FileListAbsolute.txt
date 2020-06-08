@@ -1,0 +1,6 @@
+D:\zTest\PromotionEngine.Client\bin\Debug\PromotionEngine.Client.exe.config
+D:\zTest\PromotionEngine.Client\bin\Debug\PromotionEngine.Client.exe
+D:\zTest\PromotionEngine.Client\bin\Debug\PromotionEngine.Client.pdb
+D:\zTest\PromotionEngine.Client\obj\Debug\PromotionEngine.Client.exe
+D:\zTest\PromotionEngine.Client\obj\Debug\PromotionEngine.Client.pdb
+D:\zTest\PromotionEngine.Client\obj\Debug\PromotionEngine.Client.csprojAssemblyReference.cache

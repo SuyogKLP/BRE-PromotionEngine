@@ -1,0 +1,6 @@
+D:\zTest\Orders.BusinessRuleEngine\obj\Debug\Orders.BusinessRuleEngine.csprojAssemblyReference.cache
+D:\zTest\Orders.BusinessRuleEngine\bin\Debug\Orders.BusinessRuleEngine.exe.config
+D:\zTest\Orders.BusinessRuleEngine\bin\Debug\Orders.BusinessRuleEngine.exe
+D:\zTest\Orders.BusinessRuleEngine\bin\Debug\Orders.BusinessRuleEngine.pdb
+D:\zTest\Orders.BusinessRuleEngine\obj\Debug\Orders.BusinessRuleEngine.exe
+D:\zTest\Orders.BusinessRuleEngine\obj\Debug\Orders.BusinessRuleEngine.pdb
