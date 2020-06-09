@@ -11,13 +11,13 @@ namespace Orders.BusinessRuleEngine
     {
         string PackingSlip();
         string GenerateCommissionPayment();
-        string AddFirstAidVideo();
+        string LearningToSki();
     }
 
     //Defining families of related (child) classs
     class Product : IProductBookPayment
     {
-        public string AddFirstAidVideo()
+        public string LearningToSki()
         {
             return "Added First-aid video to the packing slip (the result of court 1997)";
         }
@@ -35,7 +35,7 @@ namespace Orders.BusinessRuleEngine
     //Defining families of related (child) classs
     class Book : IProductBookPayment
     {
-        public string AddFirstAidVideo()
+        public string LearningToSki()
         {
             return "Added First-aid video to the packing slip (the result of court 1997)";
         }

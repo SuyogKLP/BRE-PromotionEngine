@@ -55,7 +55,7 @@ namespace Orders.BusinessRuleEngine
                 case Payment.Video:
                     {
                         factory = new ProductBookPaymentFactory();
-                        Console.WriteLine(paymentType.ToString() + ":\n" + factory.ProductBookPayment().AddFirstAidVideo());
+                        Console.WriteLine(paymentType.ToString() + ":\n" + factory.ProductBookPayment().LearningToSki());
                         break;
                     }
             }
