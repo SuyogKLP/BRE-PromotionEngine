@@ -11,11 +11,11 @@ namespace PromotionEngine.Client
         private double _TypeOrderValue;
         public override double ActivePromotion(int numberOfDUnits)
         {
-            int unitC = 15;
             Name = "D";
+            UnitPrice = 15;
 
             if (numberOfDUnits >= 1)
-                _TypeOrderValue = unitC * numberOfDUnits;
+                _TypeOrderValue = UnitPrice * numberOfDUnits;
 
             return _TypeOrderValue;
         }

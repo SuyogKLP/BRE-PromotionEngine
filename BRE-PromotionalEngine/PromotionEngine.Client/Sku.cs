@@ -8,10 +8,9 @@ namespace PromotionEngine.Client
 {
     public class Sku
     {
-        protected string Name { get; set; }
-        protected int UnitPrice { get; set; }
-        protected int PromotionValue { get; set; }
+        public string Name { get; set; }
+        public int UnitPrice { get; set; }
+        public int PromotionValue { get; set; }
         public virtual double ActivePromotion(int numberOfUnits) { return 0; }
-        public virtual double ActivePromotion(int numberC, int numberD) { return 0; }
     }
 }

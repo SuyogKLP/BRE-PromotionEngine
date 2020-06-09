@@ -9,15 +9,13 @@ namespace PromotionEngine.Client
     public class SkuTypeCD : Sku
     {
         private double _TypeOrderValue;
-        public override double ActivePromotion(int numberC, int numberD)
-        {
-            int numberOfUnits = 0;
+        public override double ActivePromotion(int numberOfUnits)
+        {           
             int unitC = 15; int UnitD = 20;
             Name = "C & D";
             UnitPrice = unitC + UnitD;
             PromotionValue = 30;
-
-            numberOfUnits = numberC + numberD;
+          
             if (numberOfUnits > 1)
             {                
                 int j = numberOfUnits % 2;

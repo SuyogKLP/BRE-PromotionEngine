@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Orders.BusinessRuleEngine
 {
+    //Define factory 
     interface IPaymentFactory
     {
         IProductBookPayment ProductBookPayment();
         IMembershipUpgradePayment MembershipPayment();
     }
 
+    //Defining factory types
     class ProductBookPaymentFactory : IPaymentFactory
     {
         public IMembershipUpgradePayment MembershipPayment()
@@ -25,7 +27,7 @@ namespace Orders.BusinessRuleEngine
         }
     }
 
-
+    //Defining factory types
     class MembershipPaymentFactory : IPaymentFactory
     {
         public IMembershipUpgradePayment MembershipPayment()

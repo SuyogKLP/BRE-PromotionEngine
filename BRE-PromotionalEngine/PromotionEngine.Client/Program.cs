@@ -6,56 +6,66 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine.Client
 {
-   
-
-   
-
-    
-
-   
-
     class Program
     {
         static void Main(string[] args)
         {
             bool flag = false;
+            double result = 0;
+            int numberC = 0;
+            int numberD = 0;
             double TotalValue = 0;
             Console.Write("Enter number of Units For A: ");
-            int numberA = int.Parse(Console.ReadLine());
-            SkuTypeA obj1 = new SkuTypeA();
-            double result = obj1.ActivePromotion(numberA);
-            TotalValue = TotalValue + result;
+            string input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input))
+            {
+                SkuTypeA obj1 = new SkuTypeA();
+                result = obj1.ActivePromotion(Convert.ToInt32(input));
+                TotalValue += result;
+            }
 
             Console.Write("Enter number of Units For B: ");
-            int numberB = int.Parse(Console.ReadLine());
-            SkuTypeB obj2 = new SkuTypeB();
-            result = obj2.ActivePromotion(numberB);
-            TotalValue = TotalValue + result;
-
+            input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input))
+            {
+                SkuTypeB obj2 = new SkuTypeB();
+                result = obj2.ActivePromotion(Convert.ToInt32(input));
+                TotalValue += result;
+            }
+            
             Console.Write("Enter number of Units For C : ");
-            int numberC = int.Parse(Console.ReadLine());
+            input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input))
+            {
+                numberC = Convert.ToInt32(input);
+            }
 
             Console.Write("Enter number of Units For D : ");
-            int numberD = int.Parse(Console.ReadLine());
+            input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input))
+            {
+                numberD = Convert.ToInt32(input);
+            }
 
             if (numberC > 0 && numberD > 0)
             {
                 SkuTypeCD obj3 = new SkuTypeCD();
-                result = obj3.ActivePromotion(numberC, numberD);
+                int totalNumberofUnits = numberC + numberD;
+                result = obj3.ActivePromotion(totalNumberofUnits);
                 TotalValue = TotalValue + result;
                 flag = true;
             }
             if (numberC >= 1 && (!flag))
-            {              
+            {
                 SkuTypeC obj3 = new SkuTypeC();
                 result = obj3.ActivePromotion(numberC);
                 TotalValue = TotalValue + result;
             }
-            
+
             if (numberD >= 1 && (!flag))
             {
                 SkuTypeD obj3 = new SkuTypeD();
-                result = obj3.ActivePromotion(numberC);
+                result = obj3.ActivePromotion(numberD);
                 TotalValue = TotalValue + result;
             }
 

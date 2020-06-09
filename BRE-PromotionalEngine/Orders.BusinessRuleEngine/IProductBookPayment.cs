@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Orders.BusinessRuleEngine
 {
+   
     interface IProductBookPayment
     {
         string PackingSlip();
@@ -13,6 +14,7 @@ namespace Orders.BusinessRuleEngine
         string AddFirstAidVideo();
     }
 
+    //Defining families of related (child) classs
     class Product : IProductBookPayment
     {
         public string AddFirstAidVideo()
@@ -28,9 +30,9 @@ namespace Orders.BusinessRuleEngine
         {
             return "Packing slip for shipping is generated!";
         }
-
-
     }
+
+    //Defining families of related (child) classs
     class Book : IProductBookPayment
     {
         public string AddFirstAidVideo()
