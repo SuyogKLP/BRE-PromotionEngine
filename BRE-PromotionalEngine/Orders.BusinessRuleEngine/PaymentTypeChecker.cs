@@ -14,29 +14,29 @@ namespace Orders.BusinessRuleEngine
         UpgradeMembership,
         Video
     }
-    class PaymentTypeChecker
+    class PaymentType
     {
         IPaymentFactory factory;
         Payment paymentType;
 
-        public PaymentTypeChecker(Payment type)
+        public PaymentType(Payment type)
         {
             paymentType = type;
         }
 
-        public void CheckPayments()
+        public void MakePayment()
         {
             switch (paymentType)
             {
                 case Payment.Product:
                     {
-                        factory = new ProductPaymentFactory();
+                        factory = new ProductBookPaymentFactory();
                         Console.WriteLine(paymentType.ToString() + ":\n" + factory.ProductBookPayment().PackingSlip() + "\n" + factory.ProductBookPayment().GenerateCommissionPayment());
                         break;
                     }
                 case Payment.Book:
                     {
-                        factory = new BookPaymentFactory();
+                        factory = new MembershipPaymentFactory();
                         Console.WriteLine(paymentType.ToString() + ":\n" + factory.ProductBookPayment().PackingSlip() + "\n" + factory.ProductBookPayment().GenerateCommissionPayment());
                         break;
                     }
@@ -48,13 +48,13 @@ namespace Orders.BusinessRuleEngine
                     }
                 case Payment.UpgradeMembership:
                     {
-                        factory = new MembershipUpgradePaymentFactory();
+                        factory = new ProductBookPaymentFactory();
                         Console.WriteLine(paymentType.ToString() + ":\n" + factory.MembershipPayment().UpgradeMembershipDetails() + "\n" + factory.MembershipPayment().SendEmail());
                         break;
                     }
                 case Payment.Video:
                     {
-                        factory = new ProductPaymentFactory();
+                        factory = new ProductBookPaymentFactory();
                         Console.WriteLine(paymentType.ToString() + ":\n" + factory.ProductBookPayment().AddFirstAidVideo());
                         break;
                     }

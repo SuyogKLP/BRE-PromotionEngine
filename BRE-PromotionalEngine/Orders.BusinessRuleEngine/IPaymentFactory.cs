@@ -12,11 +12,11 @@ namespace Orders.BusinessRuleEngine
         IMembershipUpgradePayment MembershipPayment();
     }
 
-    class ProductPaymentFactory : IPaymentFactory
+    class ProductBookPaymentFactory : IPaymentFactory
     {
         public IMembershipUpgradePayment MembershipPayment()
         {
-            return new Membership();
+            return new UpgradeMembership();
         }
 
         public IProductBookPayment ProductBookPayment()
@@ -25,18 +25,6 @@ namespace Orders.BusinessRuleEngine
         }
     }
 
-    class BookPaymentFactory : IPaymentFactory
-    {
-        public IMembershipUpgradePayment MembershipPayment()
-        {
-            return new Membership();
-        }
-
-        public IProductBookPayment ProductBookPayment()
-        {
-            return new Book();
-        }
-    }
 
     class MembershipPaymentFactory : IPaymentFactory
     {
@@ -47,20 +35,7 @@ namespace Orders.BusinessRuleEngine
 
         public IProductBookPayment ProductBookPayment()
         {
-            return new Product();
-        }
-    }
-
-    class MembershipUpgradePaymentFactory : IPaymentFactory
-    {
-        public IMembershipUpgradePayment MembershipPayment()
-        {
-            return new UpgradeMembership();
-        }
-
-        public IProductBookPayment ProductBookPayment()
-        {
-            return new Product();
+            return new Book();
         }
     }
             
