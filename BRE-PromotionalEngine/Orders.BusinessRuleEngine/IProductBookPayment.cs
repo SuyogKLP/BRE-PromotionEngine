@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Orders.BusinessRuleEngine
 {
-   
+    //Creating the Abstract entities
     interface IProductBookPayment
     {
         string PackingSlip();
@@ -14,7 +14,7 @@ namespace Orders.BusinessRuleEngine
         string LearningToSki();
     }
 
-    //Defining families of related (child) classs
+    //Creating the Concrete/related or (child) classs
     class Product : IProductBookPayment
     {
         public string LearningToSki()

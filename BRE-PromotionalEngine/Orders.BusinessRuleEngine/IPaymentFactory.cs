@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Orders.BusinessRuleEngine
 {
-    //Define factory 
+    //Defining Abstract Factory 
     interface IPaymentFactory
     {
         IProductBookPayment ProductBookPayment();
         IMembershipUpgradePayment MembershipPayment();
     }
 
-    //Defining factory types
+    //Defining Concrete Factories
     class ProductBookPaymentFactory : IPaymentFactory
     {
         public IMembershipUpgradePayment MembershipPayment()

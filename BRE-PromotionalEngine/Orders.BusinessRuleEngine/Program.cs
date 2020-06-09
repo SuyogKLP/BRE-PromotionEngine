@@ -10,6 +10,7 @@ namespace Orders.BusinessRuleEngine
     {
         static void Main(string[] args)
         {
+            //Achieved solution using Abstract factory pattern
             PaymentType paymentType = new PaymentType(Payment.Product);
             paymentType.MakePayment();
             Console.WriteLine("\nPress enter for new Payment");
