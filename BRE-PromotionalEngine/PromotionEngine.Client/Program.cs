@@ -15,12 +15,19 @@ namespace PromotionEngine.Client
             int numberC = 0;
             int numberD = 0;
             double TotalValue = 0;
+
+            //Here calling all one by one for calculating all amounts.
+            //We can conditionally create instance and process the order accordingly.
+            //To calculate all order (sum) i'm assuming user will accept number of products (units)
+
+            ISku ObjInterface = null;
+                       
             Console.Write("Enter number of Units For A: ");
             string input = Console.ReadLine();
             if (!string.IsNullOrEmpty(input))
             {
-                SkuTypeA obj1 = new SkuTypeA();
-                result = obj1.ActivePromotion(Convert.ToInt32(input));
+                ObjInterface = SkuFactory.CreateandReturnObj(1);
+                result = ObjInterface.ActivePromotion(Convert.ToInt32(input));
                 TotalValue += result;
             }
 
@@ -28,11 +35,11 @@ namespace PromotionEngine.Client
             input = Console.ReadLine();
             if (!string.IsNullOrEmpty(input))
             {
-                SkuTypeB obj2 = new SkuTypeB();
-                result = obj2.ActivePromotion(Convert.ToInt32(input));
+                ObjInterface = SkuFactory.CreateandReturnObj(2);
+                result = ObjInterface.ActivePromotion(Convert.ToInt32(input));
                 TotalValue += result;
             }
-            
+
             Console.Write("Enter number of Units For C : ");
             input = Console.ReadLine();
             if (!string.IsNullOrEmpty(input))
@@ -49,23 +56,23 @@ namespace PromotionEngine.Client
 
             if (numberC > 0 && numberD > 0)
             {
-                SkuTypeCD obj3 = new SkuTypeCD();
+                ObjInterface = SkuFactory.CreateandReturnObj(5);
                 int totalNumberofUnits = numberC + numberD;
-                result = obj3.ActivePromotion(totalNumberofUnits);
+                result = ObjInterface.ActivePromotion(totalNumberofUnits);
                 TotalValue = TotalValue + result;
                 flag = true;
             }
             if (numberC >= 1 && (!flag))
             {
-                SkuTypeC obj3 = new SkuTypeC();
-                result = obj3.ActivePromotion(numberC);
+                ObjInterface = SkuFactory.CreateandReturnObj(3);
+                result = ObjInterface.ActivePromotion(numberC);
                 TotalValue = TotalValue + result;
             }
 
             if (numberD >= 1 && (!flag))
             {
-                SkuTypeD obj3 = new SkuTypeD();
-                result = obj3.ActivePromotion(numberD);
+                ObjInterface = SkuFactory.CreateandReturnObj(4);
+                result = ObjInterface.ActivePromotion(numberD);
                 TotalValue = TotalValue + result;
             }
 

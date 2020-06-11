@@ -45,7 +45,8 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sku.cs" />
+    <Compile Include="ISku.cs" />
+    <Compile Include="SkuFactory.cs" />
     <Compile Include="SkuTypeA.cs" />
     <Compile Include="SkuTypeB.cs" />
     <Compile Include="SkuTypeC.cs" />

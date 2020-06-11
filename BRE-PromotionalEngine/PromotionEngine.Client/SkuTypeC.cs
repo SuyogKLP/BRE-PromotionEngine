@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine.Client
 {
-    public class SkuTypeC : Sku
+    public class SkuTypeC : ISku
     {
         private double _TypeOrderValue;
-        public override double ActivePromotion(int numberOfCUnits)
+        public string Name { get; set; }
+        public int UnitPrice { get; set; }
+        public int PromotionValue { get; set; }
+        public double ActivePromotion(int numberOfCUnits)
         {
             Name = "C";
             UnitPrice = 20;
