@@ -6,30 +6,39 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine.Client
 {
+    public enum SkuType
+    {
+        A,
+        B,
+        C,
+        D,
+        CD
+    }
+
     /// <summary>
     /// Designed using factory pattern
     /// </summary>
     public class SkuFactory
-    {
-        static public ISku CreateandReturnObj(int cChoice)
+    {      
+        static public ISku CreateandReturnObj(SkuType skuType)
         {
             ISku ObjSelector = null;
 
-            switch (cChoice)
+            switch (skuType)
             {
-                case 1:
+                case SkuType.A:
                     ObjSelector = new SkuTypeA();
                     break;
-                case 2:
+                case SkuType.B:
                     ObjSelector = new SkuTypeB();
                     break;
-                case 3:
+                case SkuType.C:
                     ObjSelector = new SkuTypeC();
                     break;
-                case 4:
+                case SkuType.D:
                     ObjSelector = new SkuTypeD();
                     break;
-                case 5:
+                case SkuType.CD:
                     ObjSelector = new SkuTypeCD();
                     break;
             }

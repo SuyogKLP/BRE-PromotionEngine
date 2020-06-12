@@ -26,7 +26,7 @@ namespace PromotionEngine.Client
             string input = Console.ReadLine();
             if (!string.IsNullOrEmpty(input))
             {
-                ObjInterface = SkuFactory.CreateandReturnObj(1);
+                ObjInterface = SkuFactory.CreateandReturnObj(SkuType.A);
                 result = ObjInterface.ActivePromotion(Convert.ToInt32(input));
                 TotalValue += result;
             }
@@ -35,7 +35,7 @@ namespace PromotionEngine.Client
             input = Console.ReadLine();
             if (!string.IsNullOrEmpty(input))
             {
-                ObjInterface = SkuFactory.CreateandReturnObj(2);
+                ObjInterface = SkuFactory.CreateandReturnObj(SkuType.B);
                 result = ObjInterface.ActivePromotion(Convert.ToInt32(input));
                 TotalValue += result;
             }
@@ -56,7 +56,7 @@ namespace PromotionEngine.Client
 
             if (numberC > 0 && numberD > 0)
             {
-                ObjInterface = SkuFactory.CreateandReturnObj(5);
+                ObjInterface = SkuFactory.CreateandReturnObj(SkuType.CD);
                 int totalNumberofUnits = numberC + numberD;
                 result = ObjInterface.ActivePromotion(totalNumberofUnits);
                 TotalValue = TotalValue + result;
@@ -64,14 +64,14 @@ namespace PromotionEngine.Client
             }
             if (numberC >= 1 && (!flag))
             {
-                ObjInterface = SkuFactory.CreateandReturnObj(3);
+                ObjInterface = SkuFactory.CreateandReturnObj(SkuType.C);
                 result = ObjInterface.ActivePromotion(numberC);
                 TotalValue = TotalValue + result;
             }
 
             if (numberD >= 1 && (!flag))
             {
-                ObjInterface = SkuFactory.CreateandReturnObj(4);
+                ObjInterface = SkuFactory.CreateandReturnObj(SkuType.D);
                 result = ObjInterface.ActivePromotion(numberD);
                 TotalValue = TotalValue + result;
             }
